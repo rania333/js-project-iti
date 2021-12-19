@@ -20,7 +20,7 @@ var cityTest =  /^[a-zA-z]{5,}$/;
 var codeTest =  /^[0-9]{4,}$/;
 
 var inputs = document.forms[0].elements;
-
+//validate address form
 var flag = true;
 var key = 0; //a3rf n l event at3ml
 [].forEach.call(inputs, (input) => {
@@ -102,84 +102,32 @@ var creditNum = document.getElementById('cardNum');
 var creditName = document.getElementById('cardName');
 var creditExpire = document.getElementById('date');
 var creditCvv = document.getElementById('cvv');
+
 var date = new Date();
 var currentDate = date.toLocaleDateString();
 var creditDateFormat = new Date(creditExpire.value);
 
 var radioButton = document.getElementsByName('payment');
 
-var clicked = false;
-var entered = 0; //sure that user enter change event on payment method
-var flag2 = false; //no err in payment method
-radioButton.forEach(el => {
-    el.addEventListener('click', function(e) {
-        if (e.target.id == 'credit') {
-            //handle validation on this form
-            var allInputs = document.forms[1].elements;
-            [].forEach.call(allInputs, (el) => {
-                el.setAttribute('required', true);
-                console.log(el);
-            })
-            clicked = true;
-        } else if (e.target.id == 'paypal' || e.target.id == 'cash') {
-            clicked = true;
-        }
-    });
-})
-
-//validate credit form inputs
-//var creditInputs = document.forms[1].elements;
-function validatePaymentForm () {
-    //validate inputs
-    var creditNumTest = /^[0-9]{9,}$/;
-    var creditNameTest = /^[a-zA-z]{3,}$/;
-    var cvvTest = /^[0-9]{4,}$/;
-    //fire event
-    [].forEach.call(creditInputs, input => {
-        input.addEventListener('change', function(e) {
-            //entered++;
-            //creditName
-            if(!creditNameTest.test(creditName.value)) {
-                creditName.style.border = '2px solid red';
-                flag2 = false;
-            } else {
-                creditName.style.border = 'none';
-                flag2 = true
-            }
-            //creditNum
-            if(!creditNumTest.test(creditNum.value)) {
-                creditNum.style.border = '2px solid red';
-                flag2 = false;
-            } else {
-                creditNum.style.border = 'none';
-                flag2 = true
-            }
-            //creditCVV
-            if(!cvvTest.test(creditCvv.value)) {
-                creditCvv.style.border = '2px solid red';
-                flag2 = false;
-            } else {
-                creditCvv.style.border = 'none';
-                flag2 = true
-            }
-            //date
-            if(new Date(currentDate) < new Date(creditExpire.value)) {//err
-                creditExpire.style.backgroundColor = 'red';
-                flag2 = false;
-            } else {
-                creditExpire.style.backgroundColor = 'white';
-                flag2 = true
-            }
-        })        
-    })
-}
-
-//submit payment data 
-var orderBtn = document.getElementsByClassName('orderBtn')[0];
-
-orderBtn.addEventListener("click", function(e) {
+//submit payment form
+var paymentForm = document.forms[1];
+var counter = 0 ; //count if i checked form or no
+paymentForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    if (clicked) {
+    //check method type
+    if (this.payment[0].checked) { //credit
+        validatePaymentForm();
+        console.log("flag2", flag2); //flag = true y3ni done
+        if(flag2) {
+            counter++;
+        }
+    } else if (this.payment[1].checked) {
+        counter++
+    } else if(this.payment[2].checked) {
+        counter++
+    } 
+    //to next step
+    if(counter != 0) {
         //change state
         stateActive.forEach(el => {
             el.classList.remove('active');
@@ -191,6 +139,50 @@ orderBtn.addEventListener("click", function(e) {
         paymentLayout.style.display = 'none';
         deliveryLayout.style.display = 'flex';
     } else {
-        alert('you must choose payment type');
+        alert('you must choose payment type with valid inputs');
     }
-})
+});
+
+
+var flag2 = false; //no err in payment method
+
+//validate credit form inputs
+function validatePaymentForm () {
+    //validate inputs
+    var creditNumTest = /^[0-9]{9,}$/;
+    var creditNameTest = /^[a-zA-z]{3,}$/;
+    var cvvTest = /^[0-9]{4,}$/;
+    //fire event
+    //creditName
+    if(!creditNameTest.test(creditName.value)) {
+        creditName.style.border = '2px solid red';
+        flag2 = false;
+    } else {
+        creditName.style.border = 'none';
+        flag2 = true;
+    }
+    //creditNum
+    if(!creditNumTest.test(creditNum.value)) {
+        creditNum.style.border = '2px solid red';
+        flag2 = false;
+    } else {
+        creditNum.style.border = 'none';
+        flag2 = true;
+    }
+    //creditCVV
+    if(!cvvTest.test(creditCvv.value)) {
+        creditCvv.style.border = '2px solid red';
+        flag2 = false;
+    } else {
+        creditCvv.style.border = 'none';
+        flag2 = true;
+    }
+    //date
+    if(new Date(currentDate) > new Date(creditExpire.value)) {
+        creditExpire.style.backgroundColor = 'white';
+        flag2 = true;
+    } else {
+        flag2 = false
+        creditExpire.style.backgroundColor = 'red';
+    }
+}
