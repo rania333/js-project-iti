@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>E-commerce</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav>
+            <ul>
+                <li> <i class="fas fa-location-arrow active" id='addresss'></i> <span>Address</span> </li>
+                <li> <i class="fas fa-money-bill-wave" id='payment'></i> <span>Payment</span> </li>
+                <li> <i class="fas fa-truck" id='delivery'></i> <span>Delivery</span> </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="all">
+    <!-------- right side -> byt8yr------------>
+    <div class="content">
+        <article class="address">
+            <header>Shipping Address</header>
+            <!--------- awl view ------------>
+            <form action="">
+                <label for="fullName"><i class="fas fa-user"></i> full name</label>
+                <input type="text" id="fullName" placeholder="Your Full Name">
+
+                <label for="email"><i class="fas fa-envelope"></i> email </label>
+                <input type="email" id="email" placeholder="name@example.com">
+
+                <label for="address"><i class="fas fa-map-marker-alt"></i> address </label>
+                <input type="text" id="address" placeholder="542 W 9th Street"> 
+
+                <label for="city"><i class="fas fa-university"></i> city </label>
+                <input type="text" id="city" placeholder="Cairo">
+                <div class="add">
+                    <label for="state"> state </label>
+                    <input type="text" id="state" placeholder="NY">
+
+                    <label for="zip"> zip </label>
+                    <input type="text" id="zip" placeholder="2465">
+                </div>
+                
+
+                <input type="submit" value="Continue to checkout" id='addBtn' style="cursor: pointer;">
+            </form>
+        </article>
+        <!----- payment -> tany view--------->
+        <article class="payment">
+            <header><h2>Payment</h2> <i class="fas fa-lock"></i> </header>
+            <div class="ways">
+                <div>
+                    <header>
+                        <div>
+                            <input type="radio" id="credit" name="payment">
+                            <label for="credit">Credit Card </label>
+                        </div>
+                        <img src="./img/visa.png" alt="visa logo" width="50" height="30">
+                    </header>
+                    <form action="">
+                        <label for="cardNum">Card Number</label>
+                        <input type="text" placeholder="000 000 000" id="cardNum"> <br>
+
+                        <label for="cardName">Name on card</label>
+                        <input type="text" placeholder="name" id="cardName"> <br>
+
+                        <div>
+                            <label for="date">Expire Date</label>
+                            <input type="date" id="date"> 
+
+                            <label for="cvv">cvv</label>
+                            <input type="text" id="cvv" placeholder="0000"> 
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <div>
+                        <input type="radio" id="paypal" name="payment">
+                        <label for="paypal"> Paypal </label>
+                    </div>
+                    <img src="./img/paypal.png" alt="paypal logo" width="50" height="30">
+                </div>
+                <hr>
+                <div>
+                    <div>
+                        <input type="radio" id="cash" name="payment">
+                        <label for="cash">on delivery </label>
+                    </div>
+                    <img src="./img/money.jpg" alt="money logo" width="50" height="30">
+                </div>
+                <hr>
+                <input type="submit" class="orderBtn" style="cursor: pointer;"
+                value="Place your Order" >
+            </div>
+        </article>
+
+        <!--delivery -> third layout -->
+        <article class="deliveryLayout">
+            <p>Your Order will be delivered soon!</p>
+            <p>Track the progress for Details</p>
+            <img src="./img/undraw_package_arrived_63rf.png" alt="delivery photo"
+            width="200" height="150">
+        </article>
+    </div>
+    <!--- left side ------>
+    <aside>
+        <header>
+            <h3>order summary</h3>
+        </header>
+        <article>
+            <p>
+                <span>subtotal</span>
+                <span>50 EGP</span>
+            </p>
+            <P>
+                <span>Delivery fees</span>
+                <span>free</span>
+            </P>
+            <P>
+                <span>promo code</span>
+                <span>20 egp</span>
+            </P>
+            <p>
+                <span>total</span>
+                <span>50 egp</span>
+            </p>
+        </article>
+    </aside>
+    </div>
+    <footer>
+        <!--first card-->
+        <div>
+            <header>
+                <i class="fas fa-phone"></i>
+                <h3>help</h3>
+            </header>
+            <article>
+                <p>Call us on 0123456789</p>
+                <p>Sun-Tue: 1pm-5pm</p>
+                <p>Wed-Fri: 2pm-8pm</p>
+            </article>
+        </div>
+
+        <!--second card-->
+        <div>
+            <header>
+                <i class="fas fa-shuttle-van"></i>
+                <h3>delivery</h3>
+            </header>
+            <article>
+                <p>track the program of your order in real time</p>
+                <p><a href="#">find more </a> <i class="fas fa-sort-down"></i></p>
+            </article>
+        </div>
+
+        <!--third card-->
+        <div>
+            <header>
+                <i class="fas fa-undo"></i>
+                <h3>returns</h3>
+            </header>
+            <article>
+                <p>5 days money back return if you change your mind</p>
+                <p><a href="#">find more </a> <i class="fas fa-sort-down"></i></p>
+            </article>
+        </div>
+    </footer>
+</div>
+
+    <script src="https://kit.fontawesome.com/7b3b5a9869.js" crossorigin="anonymous">
+    </script>
+
+    <script src="./js/test.js"></script>
+</body>
+</html>

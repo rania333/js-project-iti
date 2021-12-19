@@ -1,0 +1,298 @@
+* {
+    padding:0px;
+    margin: 0px;
+}
+.container {
+    border: 1px solid black;
+    width: 80%;
+    margin: 0px auto;
+    padding: 0px;
+}
+nav ul {
+    text-align: center;
+}
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 5px 50px;
+    text-align:center;
+}
+ul li i {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #4B6587;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 25px;
+    color: #4B6587;
+    opacity: .3;
+}
+ul li i.active {
+    opacity: 1;
+}
+ul li i:first-child {
+    line-height: 50px;
+}
+li span {
+    margin: 5px;
+    font-weight:bold
+}
+li i, li span {
+    display: block;
+}
+/******************right side content********************/
+.all {
+    display: flex;
+    flex-direction:row;
+    /* width: 80%; */
+    height: 650px;
+    margin-top: 1em;
+}
+.content {
+    flex:2;
+    position:relative;
+}
+
+/***********************address**************************/
+.address {
+    background-color: #eee;
+    position:absolute;
+    z-index: 50;
+    display: none; 
+    width: 100%;
+    border-radius: 5px;
+    transition: all 2s ease-in-out;
+}
+.address header {
+    font-size:25px;
+    padding: 20px;
+    font-weight:bolder;
+    color: #4B6587;
+}
+.address form {
+    display: flex;
+    flex-direction:column;
+    padding: 0px 20px;
+    margin: 0px 5px;
+}
+.address form label , .address form input {
+    padding: 8px;
+} 
+.address form input {
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.address input:hover , .address input:active{
+    border:none;
+}
+.address form label {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.address label i {
+    margin-right: 10px;
+}
+.add {
+    margin-top: 15px;
+}
+.add input {
+    margin-right: 50px;
+}
+.address input[type='submit']{
+    padding: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
+    background-color: #4B6587;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    margin: 20px auto;
+    width: 60%;
+}
+/***********************payment**************************/
+.payment {
+    /* display: none ; */
+    position: absolute;
+    z-index:400;
+    width:100%;
+    transition: all 2s ease-in-out;
+}
+
+.payment > header {
+    font-size:20px;
+    padding: 5px 10px;
+    font-weight:bolder;
+    color: #4B6587;
+    background-color:white
+}
+.payment h2 {
+    display: inline-block;
+}
+.payment i {
+    font-size: 25px;
+    margin-left: 10px;
+}
+.ways {
+    display:flex;
+    flex-direction:column;
+    padding: 15px;
+}
+.ways input[type='radio'] {
+    height: 20px;
+    width: 20px;
+}
+.ways input[type='radio'] ~ label {
+    font-size: 20px;
+    color: #4B6587;
+    position: relative;
+    top: -3px;
+    font-weight: bold;
+}
+.ways div:nth-child(2), .ways div:nth-child(4), .ways header:first-child {
+    display: flex;
+    flex-direction: row;
+}
+.ways > div:first-child {
+    background-color: #eee;
+    padding-top: 20px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+.ways div:nth-child(2), .ways div:nth-child(4) {
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-top: 1em;
+}
+.ways div:nth-child(2) img, .ways div:nth-child(4) img {
+    width: 60px;
+    height: 50px
+}
+.ways div div:first-child {
+    flex: .7;
+}
+.ways > div:first-child img {
+    margin-top: 0px;
+}
+.ways img {
+    border-radius: 5px;
+    margin-top: -1em;
+}
+.ways form {
+    display:flex;
+    flex-direction:column;
+    padding: 5px;
+    margin: 4px
+}
+.ways form label {
+    font-size: 20px;
+    margin: 5px;
+}
+.ways form input {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.ways form div input {
+        margin-right: 50px;
+        margin-top: 10px
+}
+.orderBtn {
+    padding: 15px;
+    background-color: #4B6587;
+    width: 30%;
+    margin: 30px;
+    font-size: 20px;
+    text-transform:capitalize;
+    border-radius: 10px;
+    color: white
+}
+
+/********* delivery************/
+.deliveryLayout {
+    display: none ;
+    position: absolute;
+    z-index:500;
+    width:100%;
+    transition: display 2s ease-in-out;
+    flex-direction: column;
+    padding: 0px;
+    align-items:center;
+    margin-top: 90px; 
+}
+.deliveryLayout p {
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+    color: #4B6587;
+    margin: 30px 0px;
+}
+.deliveryLayout img {
+    width: 400px;
+    height: 300px
+}
+/************ aside ****************/
+aside {
+    /* background-color:bisque; */
+    flex:1;
+    text-transform: capitalize;
+}
+aside header {
+    font-size:30px;
+    text-align: center;
+    margin: 15px;
+    color: #4B6587;
+    border-bottom: 2px solid #4B6587;
+    padding-bottom: 20px;
+}
+aside article {
+    padding: 30px;    
+}
+aside article p {
+    padding: 15px;
+    display: flex;
+    flex-direction:row;
+}
+aside p span:first-child {
+    flex: 2;
+}
+aside p span:last-child {
+    flex: 2;
+    text-transform:uppercase
+}
+aside p:last-child {
+    color: #4B6587;
+    font-size:25px
+}
+
+/******************* footer *********************/
+footer {
+    padding:10px;
+    margin-top:-1.5em;
+    display:inline-flex;
+    width: 91.3%;
+    gap:8em;
+    padding-left:6em
+}
+footer header h3{
+    display:inline-block;
+    margin-left: .5em;
+    text-transform:capitalize;
+    color: #4B6587;
+}
+footer header i {
+    color:#4B6587;
+}
+footer article p {
+    width: 12em;
+    margin-left: 2em;
+    font-size: 18px;
+    margin: .2em 0em .2em 2em
+}
+footer article a {
+    font-size: 1.2em;
+    text-decoration: none; 
+    color: #4B6587;
+}
