@@ -180,7 +180,7 @@ li i, li span {
     border-radius: 5px;
     margin-top: -1em;
 }
-.ways form {
+.ways form .creditInputs {
     display:flex;
     flex-direction:column;
     padding: 5px;
