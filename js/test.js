@@ -1,3 +1,16 @@
+/************* get and set bill from local storage ******************/
+var subTotal = document.getElementById('subTotal');
+var promoCode = document.getElementById('promoCode');
+var total = document.getElementById('total');
+var promoCodeStored = localStorage.getItem('promoCode');
+var totalStored = localStorage.getItem('total');
+var subTotalCalc = parseFloat(promoCodeStored) + parseFloat(totalStored);
+
+subTotal.textContent = subTotalCalc + ' $';
+promoCode.textContent = promoCodeStored + ' $';
+total.textContent = totalStored + ' $';
+
+
 /******************* shipping address **********************/
 var fullName = document.getElementById('fullName');
 var email = document.getElementById('email');
@@ -25,7 +38,7 @@ var flag = true;
 var key = 0; //a3rf n l event at3ml
 [].forEach.call(inputs, (input) => {
     input.addEventListener('keypress', function(e) {
-        key++;
+        key = 1;
         //check
         //fullName
         if(!fullNameTest.test(fullName.value)) {
@@ -33,7 +46,7 @@ var key = 0; //a3rf n l event at3ml
             flag = false;
         } else {
             fullName.style.border = 'none';
-            flag = true
+            flag = true;
         }
         //Email
         if(!emailTest.test(email.value)) {
@@ -41,7 +54,7 @@ var key = 0; //a3rf n l event at3ml
             flag = false;
         } else {
             email.style.border = 'none';
-            flag = true
+            flag = true;
         }
 
         //address
@@ -50,16 +63,15 @@ var key = 0; //a3rf n l event at3ml
             flag = false;
         } else {
             address.style.border = 'none';
-            flag = true
+            flag = true;
         }
-
         //city
         if(!cityTest.test(city.value)) {
             city.style.border = '2px solid red';
             flag = false;
         } else {
             city.style.border = 'none';
-            flag = true
+            flag = true;
         }
 
         //code
@@ -68,18 +80,19 @@ var key = 0; //a3rf n l event at3ml
             flag = false;
         } else {
             zip.style.border = 'none';
-            flag = true
+            flag = true;
         }
 
         addressBtn.style.border = 'none';
     })
     
 })
+
 //submit address form
 addressForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    console.log(key);
-    if(!flag || key == 0) { //error & done event
+    console.log("key",key);
+    if(flag || key == 0) { //error & done event
         alert('some inputs are invalid');
     } else {
         //change state
