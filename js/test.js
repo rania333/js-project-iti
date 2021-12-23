@@ -92,7 +92,7 @@ var key = 0; //a3rf n l event at3ml
 addressForm.addEventListener('submit', function(e) {
     e.preventDefault();
     console.log("key",key);
-    if(flag || key == 0) { //error & done event
+    if(flag || key != 1) { //error & done event
         alert('some inputs are invalid');
     } else {
         //change state
