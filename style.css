@@ -1,0 +1,221 @@
+#cartBtn {
+    padding: 5px;
+    background-color: antiquewhite;
+    width: 100px;
+}
+.pData {
+    /* border: 1px solid; */
+    /* height: 193px; */
+    display: flex;
+}
+
+#cartContent {
+    position: fixed; 
+    display: flex;;
+    /* display: none; Hidden by default */
+    width: 80%; 
+    height: 100%;
+    top: 15%;
+    left: 10%;
+    margin: 5px auto;
+    background-color: rgba(0,0,0,0.02); /* Black background with opacity */
+    z-index: 2; 
+    cursor: pointer;
+    overflow: auto;
+}
+/*cart*/
+.emptyCart {
+    color:  #4B6587;
+    padding: 10px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+}
+#cartContent {
+    display: flex;
+}
+/*****************content **********************/
+.left {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction:column;
+    padding: 20px;
+
+}
+/**** left header*****/
+.left > header  {
+    display:none;
+    justify-content:space-between;
+    /* display: none; by default */
+}
+.left > header h2:first-child {
+    flex: 3;
+}
+.left > header h2:nth-child(2) {
+    flex: 1;
+}
+/************cart product header*****************/
+.cartProduct {
+    display:flex;
+    flex-direction: column;
+}
+.cartProduct > header {
+    display: flex;
+    justify-content: space-around;
+    color: #4B6587;
+}
+.cartProduct > header h2:first-child {
+    flex-basis: 40%;
+}
+.cartProduct > header h2:nth-child(2) {
+    flex-basis: 30%;
+}
+.cartProduct > header h2:nth-child(3) {
+    flex-basis: 15%;
+}
+.cartProduct > header h2:nth-child(3) {
+    flex-basis: 15%
+}
+
+/************* product content article*****************/
+.cartProduct > article {
+    display: flex;
+    justify-content:space-around;
+    align-content:space-between;
+    /* margin-bottom: -7%; */
+    margin: 1% 0;
+}
+.cartProduct > article
+/* .cartProduct > article div:nth-child(1) { */
+.pData {
+    flex-basis:40%;
+    display: flex;
+    height: 96%;
+    margin: 2;
+}
+.pData img {
+    max-width: 100%;
+    width: 50%;
+    /* flex-basis: 30%; */
+    padding-right: 4%;
+    height: 80px;
+}
+.pData div {
+    flex-basis: 70%;
+    line-height: 0%;
+    text-overflow: wrap;
+}
+.pData div h3 {
+    line-height: 15px;
+    margin-top: 10px;
+}
+.pData div p {
+    width: 100%;
+    line-height: 100%;
+    /* margin-top: -8%; */
+}
+.pQnt{
+    flex-basis: 30%;
+    display: flex;
+    align-items: baseline;
+    align-content: baseline;
+    font-weight: bolder;
+}
+.pQnt span {
+    margin: 0% 2%;
+    text-align:center;
+}
+.pQnt span:nth-child(1) , .pQnt span:nth-child(3) {
+    font-size: 30px;
+    cursor:pointer;
+    padding: -11px 0px;
+}
+.pQnt span:nth-child(2) {
+    border: 2px solid #4B6587;
+    color: #4B6587;
+    width: 10%;
+    height: 20%;
+}
+.pPrice {
+    flex-basis: 15%;
+    font-size:150%;
+}
+.pTotal {
+    font-size: 150%;
+}
+
+/*************order summary *************/
+.right {
+    flex-basis: 30%;
+    border-left: 2px solid #4B6587;
+    display: none; /*by default*/
+    background-color: rgba(0,0,0,0.2);;
+
+}
+.right > header h2{
+    color: #4B6587;
+    margin: 50px 5%;
+    font-size: 160%;
+    text-transform: uppercase;
+}
+.right hr {
+    width: 80%;
+    margin: 30px;
+    background-color: #4B6587;
+}
+.right article div:first-child {
+    padding: 5%;
+    font-size: 120%;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.right article div:first-child span:nth-child(1) {
+    color: #4B6587;
+}
+.right article form {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    font-size: 150%;
+}
+.right form input {
+    padding: 2%;
+    margin: 3%;
+    border-radius: 5px;
+    border: none
+}
+.right form input:nth-child(3) {
+    background-color:aliceblue;
+    font-weight:bold;
+    color: #4B6587;
+}
+.right div:nth-child(4) {
+    padding: 5%;
+    font-size: 120%;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.right div:nth-child(4) span:nth-child(1) {
+    color: #4B6587;
+}
+#checkout {
+    background-color:#4B6587;
+    font-weight:bold;
+    color: white;
+    padding: 2%;
+    margin: 3%;
+    border-radius: 5px;
+    border: none;
+    width: 50%;   
+    float: right
+}
+
+#apply {
+    cursor: pointer;
+}

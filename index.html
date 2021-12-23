@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button id='cartBtn'>Cart</button>
+    <div id='cartContent'>
+        <div class="left">
+            <header>
+                <h2>Shopping Cart</h2>
+                <h2 id="numOfItem"></h2>
+            </header>
+            
+        </div>
+        <div class="right">
+            <header>
+                <h2>Order Summary</h2>
+                <hr>
+            </header>
+            <article>
+                <div>
+                    <span id='numOfItemInSummary'></span>
+                    <span id='totalItemPriceInSummary'></span>
+                </div>
+                <form action="" id='promoForm'>
+                    <label for="promo">Promo Code</label>
+                    <input type="text" name="promo" id="promo" placeholder="Enter Promo Code">
+                    <input type="submit" value="APPLY" id='apply'>
+                </form>
+                <hr>
+                <div>
+                    <span>Total Price</span>
+                    <span id='totalPriceSummary'></span>
+                </div>
+                <div>
+                    <button id='checkout'>Checkout</button>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script src="./test.js"></script>
+</body>
+</html>
