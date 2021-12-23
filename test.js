@@ -157,7 +157,7 @@ promoBtn.addEventListener('click', function(e) {
         totalAfterPromo = calcTotal() - descount;
         //create new element
         var s = document.createElement('span');
-        s.textContent = `you have 50 EGP Off`;
+        s.textContent = `you have 50 $ Off`;
         s.style.color = '#4B6587';
         var promoForm = document.getElementById('promoForm');
         promoForm.insertBefore(s, promoForm.lastElementChild);
@@ -204,9 +204,11 @@ var plus = document.getElementsByClassName('plus');
         var prodId = prod.parentElement.parentElement.id;
         var product = products.find(p => p.prodId == prodId);
         if(product.prodQnt == 1) {
-            products.pop(product);
-            localStorage.setItem("products", JSON.stringify(products));
-            window.location.reload();
+        var filteredProduct = products.filter(p => {
+            return p.prodId != prodId;
+        })
+        localStorage.setItem("products", JSON.stringify(filteredProduct));
+        window.location.reload();
         } else {
             products.forEach(p => {
                 if(p.prodId == product.prodId) {
@@ -218,7 +220,6 @@ var plus = document.getElementsByClassName('plus');
         }
     })
 });
-
 //increase quantity
 [].forEach.call(plus, (prod) => {
     prod.addEventListener('click', function(e) {
